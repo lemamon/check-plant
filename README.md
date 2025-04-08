@@ -1,50 +1,104 @@
-# Welcome to your Expo app 👋
+# CheckPlant - Aplicativo de Anotações Geográficas
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## 📱 Sobre o Projeto
 
-## Get started
+CheckPlant é um aplicativo móvel desenvolvido com React Native e Expo que permite aos usuários criar e gerenciar anotações geográficas. O aplicativo utiliza a localização atual do usuário para registrar observações em um mapa interativo, facilitando o monitoramento e acompanhamento de informações em campo.
 
-1. Install dependencies
+## ✨ Funcionalidades Principais
 
-   ```bash
-   npm install
-   ```
+### 🗺️ Visualização de Anotações no Mapa
+- Mapa interativo mostrando todas as anotações registradas
+- Marcadores ajustados automaticamente para evitar sobreposição
+- Visualização detalhada ao clicar em um marcador
 
-2. Start the app
+### 📝 Adição de Novas Anotações
+- Captura automática da localização atual do usuário
+- Interface amigável para inserção de texto
+- Feedback tátil e visual ao salvar uma anotação
 
-   ```bash
-    npx expo start
-   ```
+### 🔄 Sincronização com Servidor
+- Armazenamento local de anotações
+- Sincronização com servidor remoto
+- Indicador visual do status de sincronização
 
-In the output, you'll find options to open the app in a
+## 🚀 Como Executar o Projeto
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Pré-requisitos
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Node.js (versão recomendada: 18.x ou superior)
+- npm ou yarn
+- Expo CLI
+- Um dispositivo físico ou emulador para testes
 
-## Get a fresh project
+### Instalação
 
-When you're ready, run:
-
+1. Clone o repositório
 ```bash
-npm run reset-project
+git clone [url-do-repositorio]
+cd CheckPlant
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Instale as dependências
+```bash
+npm install
+```
 
-## Learn more
+3. Inicie o aplicativo
+```bash
+npx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. Escaneie o QR code com o aplicativo Expo Go (Android) ou a câmera (iOS)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🛠️ Tecnologias Utilizadas
 
-## Join the community
+- **React Native**: Framework para desenvolvimento de aplicativos móveis
+- **Expo**: Plataforma para facilitar o desenvolvimento React Native
+- **TypeScript**: Superset tipado de JavaScript
+- **React Navigation**: Navegação entre telas
+- **Expo Location**: API para acesso à localização do dispositivo
+- **React Native Maps**: Componente de mapa interativo
+- **AsyncStorage**: Armazenamento local de dados
+- **Axios**: Cliente HTTP para requisições à API
+- **Expo Haptics**: Feedback tátil
 
-Join our community of developers creating universal apps.
+## 📁 Estrutura do Projeto
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
+/
+├── app/                    # Arquivos de rotas e telas principais
+│   ├── (tabs)/             # Telas com navegação por abas
+│   │   ├── index.tsx       # Tela inicial com mapa
+│   │   └── add.tsx         # Tela de adição de anotações
+│   └── _layout.tsx         # Layout principal da aplicação
+├── assets/                 # Recursos estáticos (imagens, fontes)
+├── components/             # Componentes reutilizáveis
+│   ├── AnnotationMap.tsx   # Componente do mapa com anotações
+│   ├── AnnotationForm.tsx  # Formulário para adicionar anotações
+│   └── ...                 # Outros componentes
+├── constants/              # Constantes da aplicação
+├── hooks/                  # Hooks personalizados
+│   ├── useAnnotations.ts   # Gerenciamento de anotações
+│   └── ...                 # Outros hooks
+├── services/               # Serviços e APIs
+│   └── AnnotationService.ts # Serviço para gerenciar anotações
+├── types/                  # Definições de tipos TypeScript
+└── utils/                  # Funções utilitárias
+```
+
+## 📱 Funcionalidades Detalhadas
+
+### Gerenciamento de Anotações
+- Armazenamento local usando AsyncStorage
+- Estrutura de dados otimizada para anotações geográficas
+- Sistema de status de sincronização para cada anotação
+
+### Interface do Usuário
+- Design responsivo e intuitivo
+- Suporte a temas claro e escuro
+- Feedback visual e tátil para ações do usuário
+
+### Geolocalização
+- Captura precisa da localização atual
+- Visualização de anotações em mapa interativo
+- Ajuste automático de marcadores para melhor visualização
